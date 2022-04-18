@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Обучение PHP</title>
 	</head>
-	<body>
+	<body align="center">
 		<?php
 			class Users // Создаём класс
 			{
