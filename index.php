@@ -35,6 +35,11 @@
 			$obj2 -> age = 38;
 			$obj2 -> city = "Сургут";
 			$obj2 -> DisplayInfo();
+
+			echo "<br>";
+
+			if($obj1 === $obj2) echo "Переменные obj1 и obj2 эквивалентны";
+			else echo "Переменные obj1 и obj2 НЕ эквивалентны";
 		?>
 	</body>
 </html>
