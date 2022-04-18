@@ -8,9 +8,19 @@
 	</head>
 	<body>
 		<?php
-			class Users // Создаём класс
+			class Users
 			{
-				public $name = "Неопределено", $age = "Неопределён", $city = "Не указан";
+				function __construct(public $name = "Неопределено", public $age = "Неопределён", public $city = "Не указан")
+				{
+					$this -> name = $name;
+					$this -> age = $age;
+					$this -> city = $city;
+				}
+
+				function __destruct()
+				{
+					echo "<i>Вызов экземпляра класса...</i><br>";
+				}
 
 				function DisplayInfo()
 				{
@@ -20,26 +30,23 @@
 				}
 			}
 
-			$obj = new Users(); // Создаём экземпляр класса
-
-			$obj1 = $obj; // Присваиваем экземпляр класса
-			$obj1 -> name = "Иван Иванов";
-			$obj1 -> age = 45;
-			$obj1 -> city = "Москва";
+			$obj1 = new Users("Иван Иванов", 45, "Москва");
 			$obj1 -> DisplayInfo();
 
 			echo "<br>";
 
-			$obj2 = $obj; // Присваиваем экземпляр класса
-			$obj2 -> name = "Сергей Сергеев";
-			$obj2 -> age = 38;
-			$obj2 -> city = "Сургут";
+			$obj2 = new Users("Сергей Сергеев", 20, "Казань");
 			$obj2 -> DisplayInfo();
 
 			echo "<br>";
 
-			if($obj1 === $obj2) echo "Переменные obj1 и obj2 эквивалентны"; // Проверяем указывают ли переменные на один экземпляр класса
-			else echo "Переменные obj1 и obj2 НЕ эквивалентны";
+			print_r($obj1);
+
+			echo "<br>";
+
+			print_r($obj2);
+
+			echo "<br><br>";
 		?>
 	</body>
 </html>
