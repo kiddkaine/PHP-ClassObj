@@ -10,7 +10,7 @@
 		<?php
 			class Users // Создаём класс
 			{
-				function __construct(public $name = "Неопределено", public $age = "Неопределён", public $city = "Не указан") // Объявляем конструктор
+				function __construct(public $name = "Неопределено", public $age = 0, public $city = "Не указан") // Объявляем конструктор
 				{
 					$this -> name = $name; // Инициализируем переменные
 					$this -> age = $age;
@@ -40,11 +40,20 @@
 
 			echo "<br>";
 
+			$obj3 = new Users(); // Создаём экземпляр класса и НЕ добавляем данные к переменным
+			$obj3 -> DisplayInfo();
+
+			echo "<br>";
+
 			print_r($obj1); // Выводим содержимое объекта obj1
 
 			echo "<br>";
 
 			print_r($obj2); // Выводим содержимое объекта obj2
+
+			echo "<br>";
+
+			print_r($obj3); // Выводим содержимое объекта obj3
 
 			echo "<br><br>";
 		?>
